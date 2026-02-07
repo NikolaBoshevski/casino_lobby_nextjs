@@ -1,11 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import gamesReducer from "./features/gamesSlice"
+import { gamesArray } from './games'
+
+const preloadedState = {
+  games: {
+    items: gamesArray,
+  },
+}
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       games: gamesReducer
     },
+    preloadedState
   })
 }
 
