@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-interface Game {
+export interface Game {
 id: string;
 name: string;
 provider: string;
@@ -19,8 +19,11 @@ const initialState: GameState = {
     name: "games",
     initialState,
     reducers: {
-        setgames(state, action: PayloadAction<Game[]>){
+        setGames(state, action: PayloadAction<Game[]>){
             state.items = action.payload
         }
     }
 })
+
+export const {setGames} = gameSlice.actions
+export default gameSlice.reducer

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Counter } from "./components/counter/Counter";
+import GameList from "./components/GameList";
+
 
 export default function IndexPage() {
-  return <Counter />;
+  return <GameList/>
 }
 
 export const metadata: Metadata = {
