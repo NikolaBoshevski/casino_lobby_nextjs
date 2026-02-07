@@ -7,7 +7,7 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
   <html>
-    <body>        
+    <body className="bg-violet-950 flex justify-center">        
       <StoreProvider>{children}</StoreProvider>      
     </body>
   </html>

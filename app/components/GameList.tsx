@@ -18,13 +18,12 @@ if(!initialized.current){
     initialized.current = true
 }   
     return(
-       <div>
+       <div className="grid grid-cols-6">
         {games.map(({id,image, name,provider, category})=>(
-            <div key={id} className="flex">
-               <Image src={image} alt={name} width={100} height={100}/>
-                <h2>{name}</h2>
+            <div key={id} data-category={category} className="flex flex-col items-center gap-3">
+               <Image src={image} alt={name} width={200} height={150} className=""/>
+                <h2 className="bg-green-900 text-white px-10 py-5 rounded font-bold">{name}</h2>
                 <h3>{provider}</h3>
-                <p>Category: {category}</p>
                 <button>Play</button>
             </div>
         ))}
