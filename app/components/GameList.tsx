@@ -15,8 +15,8 @@ export default function GameList() {
     const initialized = useRef(false)
     const searchParams = useSearchParams();
     const search = searchParams.get("search")?.toLowerCase() ?? ""
-    const filteredGames: Game[] = games.filter(({ name }) => {
-        if (name.toLowerCase().includes(search)) {
+    const filteredGames: Game[] = games.filter(({ name, provider }) => {
+        if (name.toLowerCase().includes(search) || provider.toLowerCase().includes(search)) {
             return true
         }
         return false
