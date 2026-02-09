@@ -16,11 +16,11 @@ export default function GameList() {
     const searchParams = useSearchParams();
     const search = searchParams.get("search")?.toLowerCase() ?? ""
     const categoriesParams = searchParams.get("category")?.toLowerCase() ?? ""
-    const favoriteActiveParams = searchParams.get("filterByFavorites")?.toLowerCase()?? ""
+    const favoriteActiveParams = searchParams.get("filterByFavorites")?.toLowerCase() ?? ""
     console.log("Favorite params", favoriteActiveParams)
 
     // hooks
-
+    const [isLoaded, setIsLoaded] = useState<boolean>(false)
     const [favoriteIds, setFavoriteIds] = useState<string[]>([])
     useEffect(() => {
         const stored = localStorage.getItem("favorites")
@@ -31,9 +31,15 @@ export default function GameList() {
 
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favoriteIds))
-        console.log("Favroite ID's",favoriteIds)
     }, [favoriteIds])
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (!isLoaded)
+                setIsLoaded(true)
+        }, 1000);
+        return () => clearInterval(timer)
+    }, [])
 
     // rest of logic
     if (search || categoriesParams == "") {
@@ -41,8 +47,8 @@ export default function GameList() {
     }
     const filteredGames: Game[] = games.filter(({ name, provider, category, id }) => {
         if ((name.toLowerCase().includes(search) || provider.toLowerCase().includes(search))
-            && (category.toLowerCase().toString().includes(categoriesParams)) 
-            && (!favoriteActiveParams || favoriteIds.includes(`${id}`)))  {
+            && (category.toLowerCase().toString().includes(categoriesParams))
+            && (!favoriteActiveParams || favoriteIds.includes(`${id}`))) {
             return true
         }
         return false
@@ -67,6 +73,9 @@ export default function GameList() {
     }
     if (filteredGames.length == 0) {
         return <h2 className="text-white text-4xl">No games match your criteria</h2>
+    }
+    if (!isLoaded) {
+        return <h2 className="text-white text-4xl">Loading Games...</h2>
     }
     return (
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-y-10 place-items-center">
