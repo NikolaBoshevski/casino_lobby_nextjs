@@ -24,6 +24,6 @@ export default function GameFavoriteFilter(){
 
 
     return(
-        <button onClick={() => setFavoritesActive(favoritesActive => !favoritesActive)} className={`w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white focus:outline-none  px-8  border-2 uppercase ${initialFavoriteStatus ? "border-white" : "border-transparent"}`} >Show only favorites</button>
+        <button onClick={() => setFavoritesActive(favoritesActive => !favoritesActive)} className={`min-w-fit text-wrap rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white focus:outline-none  px-8  border-2 uppercase ${initialFavoriteStatus ? "border-white" : "border-transparent"}`} >Show only favorites</button>
     )
 }

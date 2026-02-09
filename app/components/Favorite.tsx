@@ -1,13 +1,10 @@
 "use client"
-
-import { MouseEventHandler } from "react"
-
-interface FavoritePros {
+interface FavoriteProps {
     filled?: boolean,
     onToggle? : () => void
 }
 
-export default function Favorite({ filled = false, onToggle }: FavoritePros) {
+export default function Favorite({ filled = false, onToggle }: FavoriteProps) {
 
     return (
         <button onClick={onToggle} className="outline-none absolute top-3 right-3">

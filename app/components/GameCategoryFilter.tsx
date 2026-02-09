@@ -28,14 +28,14 @@ export default function GameCategoryFilter() {
 
 
     return (
-        <div className="flex gap-x-10">{
+        <div className="flex gap-x-5 flex-wrap gap-y-5 md:gap-y-0 mt-3 md:mt-0 justify-center xl:gap-x-10">{
             uniqueCategories.map(category => {
                 return (
-                    <button key={category} onClick={()=> setCategory(category)} className={`${initialCategory==category ? "border-white" : "border-transparent" } w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white transition hover:border-white border-2 uppercase px-8`} id={category}>{category}</button>
+                    <button key={category} onClick={()=> setCategory(category)} className={`${initialCategory==category ? "border-white" : "border-transparent" } min-w-max xl:min-w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white transition hover:border-white border-2 uppercase px-8`} id={category}>{category}</button>
                 )
             })
         }
-            <button onClick={() => setCategory("")} className="w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white px-8 border-2 uppercase" id="clearCategories">Clear Categories</button>
+            <button onClick={() => setCategory("")} className="min-w-max xl:min-w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white px-8 border-2 uppercase" id="clearCategories">Clear Categories</button>
         </div>
     )
 }

@@ -82,16 +82,16 @@ export default function GameList() {
             {filteredGames.length > 0 &&
                 filteredGames.map(({ id, name, provider, category, image }) => {
                     return (<div key={id} data-category={category} className="group flex flex-col items-center gap-3 rounded-xl p-4 max-w-fit transition-transform hover:scale-[1.03] duration-300 ">
-                        <div className="image-container relative">
-                            <Image src={image} alt={name} width={270} height={150} className="rounded-lg object-cover" />
+                        <div className="image-container relative cursor-pointer">
+                            <Image src={image} alt={name} width={300} height={150} className="rounded-lg object-cover" />
                             <Favorite filled={favoriteIds.includes(id)} onToggle={() => { toggleFavorite(id) }} />
                         </div>
                         <div className="flex justify-between w-full items-center">
                             <div>
-                                <h2 className="w-full rounded-md  text-md font-semibold text-white">{name}</h2>
-                                <h3 className="text-sm text-slate-300 mr-auto w-fit">{provider}</h3>
+                                <h2 className="w-full rounded-md  text-sm font-semibold text-white">{name}</h2>
+                                <h3 className="text-xs text-slate-300 mr-auto w-fit">{provider}</h3>
                             </div>
-                            <button className="w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white focus:outline-none focus:ring-2 px-8 focus:ring-offset-2 border-2 uppercase">Play</button>
+                            <button className="w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white px-8 border-2 uppercase">Play</button>
                         </div>
                     </div>
                     )
