@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GameList from "./components/GameList";
 import GameSearch from './components/GameSearch';
+import GameCategoryFilter from './components/GameCategoryFilter';
 
 
 export default function IndexPage() {
@@ -8,10 +9,13 @@ export default function IndexPage() {
     <div className="text-white text-center uppercase font-bold">
       <h1 className=" my-4 text-2xl md:text-4xl">Welcome to X Casino</h1>
       <h2 className=" mb-8 text-xl md:text-2xl">Please Choose A Game </h2>
-      <GameSearch/>
-      <GameList/>
+      <div className="flex gap-x-10 items-center mr-28">
+        <GameSearch />
+        <GameCategoryFilter />
+      </div>
+      <GameList />
     </div>
-)
+  )
 }
 
 export const metadata: Metadata = {
