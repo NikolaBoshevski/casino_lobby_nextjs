@@ -31,7 +31,7 @@ export default function GameCategoryFilter() {
         <div className="flex gap-x-10">{
             uniqueCategories.map(category => {
                 return (
-                    <button key={category} onClick={()=> setCategory(category)} className="w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white border-transparent transition hover:border-white focus:outline-none focus:ring-2 px-8  focus:ring-offset-2 focus:border-transparent border-2 uppercase" id={category}>{category}</button>
+                    <button key={category} onClick={()=> setCategory(category)} className={`${initialCategory==category ? "border-white" : "border-transparent" } w-fit rounded-md bg-[#5169D4] py-1 text-sm font-semibold text-white transition hover:border-white border-2 uppercase px-8`} id={category}>{category}</button>
                 )
             })
         }
