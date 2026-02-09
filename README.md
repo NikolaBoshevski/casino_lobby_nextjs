@@ -1,27 +1,22 @@
-# Redux Toolkit TypeScript Example
+# Casino Game List Project
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
+## How to run the project
 
-**Redux Toolkit**(also known as "RTK" for short) provides a standardized way to write Redux logic. It includes utilities that help simplify many common use cases, including [store setup](https://redux-toolkit.js.org/api/configureStore), [creating reducers and writing immutable update logic](https://redux-toolkit.js.org/api/createreducer), and even [creating entire "slices" of state at once](https://redux-toolkit.js.org/api/createslice). This example showcases each of these features in conjunction with Next.js.
+1. run "npm install"
+2. npm run dev
+3. Open http://localhost:3000 
 
-## Deploy Your Own
+## What I built
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
+- I built a website, where you can see all available games, filter them by name, provider, and category. You can add to favorites your favorite games, by clicking on the heart icon, and also filter the games by favorites
 
-## How to Use
+## One thing I found challenging
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- I have to say Redux setup, since this was a simple project I did not use Redux that much so the time I spent setting it up could've been used elsewhere
 
-```bash
-npx create-next-app --example with-redux with-redux-app
-```
+## One thing I would improve with more time
 
-```bash
-yarn create next-app --example with-redux with-redux-app
-```
+- Setting up Redux faster and using it efficiently.
 
-```bash
-pnpm create next-app --example with-redux with-redux-app
-```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
