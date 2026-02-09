@@ -3,7 +3,7 @@ import GameList from "./components/GameList";
 import GameSearch from './components/GameSearch';
 import GameCategoryFilter from './components/GameCategoryFilter';
 import GameFavoriteFilter from "./components/GameFavoriteFilter";
-
+import { Suspense } from "react";
 
 export default function IndexPage() {
   return (
@@ -12,11 +12,19 @@ export default function IndexPage() {
       <h2 className=" mb-8 text-xl md:text-2xl">Please Choose A Game </h2>
       <div className="max-w-[1420px] mx-auto">
         <div className="flex gap-x-10 justify-center xl:justify-evenly py-8 px-4 flex-wrap xl:px-0 items-center">
-          <GameSearch />
-          <GameFavoriteFilter />
-          <GameCategoryFilter />
+          <Suspense fallback={null}>
+            <GameSearch />
+          </Suspense>
+          <Suspense fallback={null}>
+            <GameFavoriteFilter />
+          </Suspense>
+          <Suspense fallback={null}>
+            <GameCategoryFilter />
+          </Suspense>
         </div>
-        <GameList />
+        <Suspense fallback={null}>
+          <GameList />
+        </Suspense>
       </div>
     </div>
   )
