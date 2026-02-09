@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import GameList from "./components/GameList";
 import GameSearch from './components/GameSearch';
 import GameCategoryFilter from './components/GameCategoryFilter';
+import GameFavoriteFilter from "./components/GameFavoriteFilter";
 
 
 export default function IndexPage() {
@@ -11,6 +12,7 @@ export default function IndexPage() {
       <h2 className=" mb-8 text-xl md:text-2xl">Please Choose A Game </h2>
       <div className="flex gap-x-10 items-center mr-28">
         <GameSearch />
+        <GameFavoriteFilter/>
         <GameCategoryFilter />
       </div>
       <GameList />
