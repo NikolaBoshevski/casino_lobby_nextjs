@@ -27,7 +27,7 @@ export default function GameSearch() {
     }, [searchInput, path, router])
 
     return (
-        <div className="relative flex flex-1 flex-shrink-0 justify-end px-8 md:px-14 py-8 flex-wrap ml-auto">
+        <div className="relative flex py-4  flex-wrap">
             <input
                 className="peer block w-full md:w-80 h-10 rounded-md border text-black focus-within:outline-none border-gray-200 p-[10px] text-sm outline-2 placeholder:text-gray-500 shadow-md dark:bg-dark dark:placeholder:text-darktext dark:text-darktext"
                 placeholder="Search by name or provider"
