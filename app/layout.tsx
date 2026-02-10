@@ -6,10 +6,24 @@ interface Props {
 }
 export default function RootLayout({ children }: Props) {
   return (
-  <html>
-    <body className="bg-[#22447D]">        
-      <StoreProvider>{children}</StoreProvider>      
-    </body>
-  </html>
+    <html>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      try {
+        const theme = localStorage.getItem("theme")
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark")
+        }
+      } catch {}
+    `,
+          }}
+        />
+      </head>
+      <body className="bg-slate-100 text-slate-900 dark:bg-[#0E1A2B] dark:text-slate-100 transition-colors duration-300">
+        <StoreProvider>{children}</StoreProvider>
+      </body>
+    </html>
   )
 }
