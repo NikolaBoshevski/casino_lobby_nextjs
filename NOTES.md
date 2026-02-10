@@ -18,4 +18,5 @@
 2. Disable a category button if there are no games from that category (currently it just does not exist if there are no games of that category)
 3. Create a page and use a <Link/> to link the user to that game's page
 4. Store "favorite"  state in the backend/database instead of localStorage
-5. Pagination 
+5. Pagination
+6. Create a Button component in which I would style my button and use it in my other components
