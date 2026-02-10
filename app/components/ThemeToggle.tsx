@@ -27,7 +27,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-md absolute right-10 top-5 px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 transition-colors"
+      className="rounded-md block ml-auto mr-2 mt-2 xl:absolute right-10 top-5 px-4 py-2 text-sm font-semibold bg-slate-200 dark:bg-slate-700 transition-colors"
     >
       {isDark ? "Light Mode" : "Dark Mode"}
     </button>
