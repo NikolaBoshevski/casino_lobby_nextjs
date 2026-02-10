@@ -5,6 +5,7 @@
 1. run "npm install"
 2. npm run dev
 3. Open http://localhost:3000 
+4. Alternatively visit: https://casinolobbynextjsdeploy.vercel.app/ to visit the deployed website.
 
 ## What I built
 
